@@ -6,11 +6,11 @@ const Counter = () => {
  const counter =  useSelector(state => state.counter);
  const [isShow, setIsShow] = useState(false)
 const incrementHandler = () => {
-  dispatch({ type: "increment" })
+  dispatch({ type: "changeCount", amount: 1 })
 };
 
 const decrementHandler = () => {
-    dispatch({ type: "decrement" })
+    dispatch({ type: "changeCount", amount: -1})
 }
   const toggleCounterHandler = () => {
     setIsShow((prevState) => {
@@ -19,11 +19,11 @@ const decrementHandler = () => {
   };
 
   const incrementBy5Handler = () => {
-    dispatch({ type:"incrementBy5" })
+    dispatch({ type:"changeCount",amount:5 })
   }
 
   const decrementBy5Handler = () => {
-    dispatch({ type:"decrementBy5" })
+    dispatch({ type:"changeCount",amount:-5 })
   }
    return (
     <main className={classes.counter}>
