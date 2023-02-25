@@ -1,6 +1,6 @@
 import classes from './Counter.module.css';
 import { useSelector, useDispatch } from 'react-redux'
-import { counterActions } from '../store';
+import { counterActions } from '../store/counter-slice'
 
 const Counter = () => {
 
@@ -29,7 +29,6 @@ const decrementHandler = () => {
 
   const decrementBy5Handler = () => {
     dispatch(counterActions.changeCount(-5))
-
   }
    return (
     <main className={classes.counter}>
